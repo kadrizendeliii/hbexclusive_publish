@@ -1,0 +1,43 @@
+/* sidebar.css
+   NOTE: Sidebar styling is primarily provided in sidebar.php inline styles.
+   This file provides responsive breakpoint styling only.
+*/
+
+#sidebar {
+    width: 260px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 50;
+    overflow-y: auto;
+    transition: transform 0.3s ease, top 0.3s ease, height 0.3s ease;
+}
+
+/* Styles handled by sidebar.php - do not override here */
+.sidebar-header, .sidebar-menu, .sidebar-menu a { }
+
+@media (max-width: 991px) {
+    /* Mobile: Hide sidebar by default - positioned below header */
+    #sidebar { 
+        transform: translateX(-100%) !important;
+        z-index: 999 !important;
+        top: 65px !important;
+        height: calc(100vh - 65px) !important;
+        width: 280px !important;
+        max-width: 90vw !important;
+        pointer-events: none !important;
+    }
+    
+    /* When active: Show sidebar */
+    #sidebar.active { 
+        transform: translateX(0) !important;
+        z-index: 999 !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Legacy support - also support .show class */
+    #sidebar.show { 
+        transform: translateX(0);
+    }
+}
