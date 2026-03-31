@@ -1,5 +1,5 @@
 <?php
-include_once('../config/config.php');
+include_once __DIR__ . '/../config/config.php';
 session_start();
 
 // Check if user is admin using correct session variable names

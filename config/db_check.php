@@ -1,5 +1,5 @@
 <?php
-include '../config/config.php';
+include __DIR__ . '/config.php';
 
 echo "<h2>Database Diagnostic</h2>";
 

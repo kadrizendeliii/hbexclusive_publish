@@ -1,5 +1,5 @@
 <?php 
-include_once('../config/config.php'); 
+include_once __DIR__ . '/../config/config.php'; 
 
 // 1. Get the current product data
 if (isset($_GET['id'])) {

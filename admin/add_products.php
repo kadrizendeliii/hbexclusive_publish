@@ -1,5 +1,5 @@
 <?php 
-include '../config/config.php'; 
+include __DIR__ . '/../config/config.php'; 
 
 $page_title = "Add Product";
 $page_subtitle = "Create a new product for your inventory";

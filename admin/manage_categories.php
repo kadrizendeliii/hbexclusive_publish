@@ -1,5 +1,5 @@
 <?php 
-include_once('../config/config.php'); 
+include_once __DIR__ . '/../config/config.php'; 
 
 $page_title = "Manage Categories";
 $page_subtitle = "Add and manage product categories";

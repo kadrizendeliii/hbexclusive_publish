@@ -1,5 +1,5 @@
 <?php
-include_once('../config/config.php');
+include_once __DIR__ . '/../config/config.php';
 if (isset($_POST['id']) && isset($_POST['category_name'])) {
     $id = intval($_POST['id']);
     $name = trim($_POST['category_name']);

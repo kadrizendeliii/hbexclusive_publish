@@ -1,5 +1,5 @@
 <?php
-include_once('../config/config.php');
+include_once __DIR__ . '/../config/config.php';
 
 $total_all_result = $conn->query("SELECT COUNT(*) as total FROM products");
 $total_all = $total_all_result ? (int) $total_all_result->fetch_assoc()['total'] : 0;
