@@ -1,25 +1,25 @@
 <?php
 // Prevent multiple inclusions from causing issues
 if (!defined('DB_CONNECTED')) {
-    $servername = getenv('DB_HOST') ?: 'localhost';
-    $username = getenv('DB_USER') ?: 'root';
-    $password = getenv('DB_PASS') ?: '';
-    $dbname = getenv('DB_NAME') ?: 'hbexclusive';
-    $dbport = (int) (getenv('DB_PORT') ?: 3306);
+    $servername = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: '127.0.0.1';
+    $username = getenv('DB_USER') ?: getenv('MYSQLUSER') ?: 'root';
+    $password = getenv('DB_PASS') ?: getenv('MYSQLPASSWORD') ?: '';
+    $dbname = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: 'hbexclusive';
+    $dbport = (int) (getenv('DB_PORT') ?: getenv('MYSQLPORT') ?: 3306);
 
-    // 1. Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname, $dbport);
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    // 2. Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    try {
+        $conn = new mysqli($servername, $username, $password, $dbname, $dbport);
+    } catch (mysqli_sql_exception $e) {
+        die(
+            'Database connection failed. Check your Render environment variables ' .
+            '(DB_HOST/DB_USER/DB_PASS/DB_NAME/DB_PORT or MYSQLHOST/MYSQLUSER/MYSQLPASSWORD/MYSQLDATABASE/MYSQLPORT). ' .
+            'Original error: ' . $e->getMessage()
+        );
     }
 
-    // 3. Set Charset (Crucial for names/emails with special characters)
     $conn->set_charset("utf8mb4");
-
-    // 4. Set MySQLi to throw exceptions (Helps catch errors instead of looping/hanging)
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     define('DB_CONNECTED', true);
 }
