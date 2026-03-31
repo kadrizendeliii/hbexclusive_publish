@@ -1,5 +1,5 @@
 <?php
-include_once('../config/config.php');
+include_once __DIR__ . '/config.php';
 
 // Create users table if it doesn't exist
 $create_users_table = "CREATE TABLE IF NOT EXISTS `users` (
