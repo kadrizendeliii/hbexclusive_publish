@@ -4,7 +4,7 @@ if (!defined('DB_CONNECTED')) {
     $servername = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: '127.0.0.1';
     $username = getenv('DB_USER') ?: getenv('MYSQLUSER') ?: 'root';
     $password = getenv('DB_PASS') ?: getenv('MYSQLPASSWORD') ?: '';
-    $dbname = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: 'hbexclusive';
+    $dbname = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: 'bnl3mzyspllclrolwbgn';
     $dbport = (int) (getenv('DB_PORT') ?: getenv('MYSQLPORT') ?: 3306);
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
