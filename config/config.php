@@ -1,7 +1,7 @@
 <?php
 // Prevent multiple inclusions from causing issues
 if (!defined('DB_CONNECTED')) {
-    $servername = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: 'bnl3mzyspllclrolwbgn-mysql.services.clever-cloud.com';
+    $servername = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: '74.220.51.251';
     $username = getenv('DB_USER') ?: getenv('MYSQLUSER') ?: 'ur5dwwodezbp4aa7';
     $password = getenv('DB_PASS') ?: getenv('MYSQLPASSWORD') ?: 'bnl3mzyspllclrolwbgn';
     $dbname = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: 'hbexclusive';
