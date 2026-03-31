@@ -1,14 +1,14 @@
 <?php
 // Prevent multiple inclusions from causing issues
 if (!defined('DB_CONNECTED')) {
-    
-    $servername = "localhost";
-    $username = "root"; 
-    $password = ""; 
-    $dbname = "hbexclusive";
+    $servername = getenv('DB_HOST') ?: 'localhost';
+    $username = getenv('DB_USER') ?: 'root';
+    $password = getenv('DB_PASS') ?: '';
+    $dbname = getenv('DB_NAME') ?: 'hbexclusive';
+    $dbport = (int) (getenv('DB_PORT') ?: 3306);
 
     // 1. Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname, $dbport);
 
     // 2. Check connection
     if ($conn->connect_error) {

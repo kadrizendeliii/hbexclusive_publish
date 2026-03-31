@@ -20,6 +20,8 @@ if ($prod_result) {
         $products[] = $product;
     }
 }
+
+$productImageBaseUrl = 'assets/uploads/';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -842,9 +844,8 @@ if ($prod_result) {
                 <div class="product-grid" id="productsGrid">
                     <?php foreach ($products as $index => $product): ?>
                         <?php
-                        $image_path = strpos($product['image_url'], '../') === 0
-                            ? $product['image_url']
-                            : '../assets/uploads/' . basename($product['image_url']);
+                        $imageFileName = basename((string) $product['image_url']);
+                        $image_path = $imageFileName !== '' ? $productImageBaseUrl . $imageFileName : 'https://via.placeholder.com/640x640?text=No+Image';
                         ?>
                         <article class="product-item" data-category="cat-<?php echo $product['category_id']; ?>">
                             <div class="product-card">

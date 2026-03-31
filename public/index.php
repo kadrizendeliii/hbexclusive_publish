@@ -6,7 +6,7 @@
     <title>Exclusive Doors - Quality Doors & Flooring</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/hbexclusive.css?v=<?php echo filemtime(__DIR__ . '/../assets/css/hbexclusive.css'); ?>">
+    <link rel="stylesheet" href="assets/css/hbexclusive.css?v=<?php echo filemtime(__DIR__ . '/assets/css/hbexclusive.css'); ?>">
     <style>
         * {
             margin: 0;
@@ -147,7 +147,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="animate-on-scroll">
-                        <img src="../public/OurStory_img.jpg" alt="Our Experience" class="experience-image">
+                        <img src="OurStory_img.jpg" alt="Our Experience" class="experience-image">
                     </div>
                 </div>
             </div>
