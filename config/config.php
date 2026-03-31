@@ -1,10 +1,10 @@
 <?php
 // Prevent multiple inclusions from causing issues
 if (!defined('DB_CONNECTED')) {
-    $servername = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: '127.0.0.1';
-    $username = getenv('DB_USER') ?: getenv('MYSQLUSER') ?: 'root';
-    $password = getenv('DB_PASS') ?: getenv('MYSQLPASSWORD') ?: '';
-    $dbname = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: 'bnl3mzyspllclrolwbgn';
+    $servername = getenv('DB_HOST') ?: getenv('MYSQLHOST') ?: 'bnl3mzyspllclrolwbgn-mysql.services.clever-cloud.com';
+    $username = getenv('DB_USER') ?: getenv('MYSQLUSER') ?: 'ur5dwwodezbp4aa7';
+    $password = getenv('DB_PASS') ?: getenv('MYSQLPASSWORD') ?: 'bnl3mzyspllclrolwbgn';
+    $dbname = getenv('DB_NAME') ?: getenv('MYSQLDATABASE') ?: 'hbexclusive';
     $dbport = (int) (getenv('DB_PORT') ?: getenv('MYSQLPORT') ?: 3306);
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
